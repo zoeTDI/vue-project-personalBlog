@@ -1,9 +1,19 @@
 <template>
   <div id="banner">
-    <h1>Caldm</h1>
-    <img src="@/assets/banner.png" alt="banner" />
+    <h1>{{ title }}</h1>
+    <img :src="bannerImg" alt="banner" />
   </div>
 </template>
+<script>
+export default {
+  data () {
+    return {
+      title: 'Caldm',
+      bannerImg: require('../assets/banner.png')
+    }
+  }
+}
+</script>
 <style scoped>
 #banner {
   width: 100vw;
