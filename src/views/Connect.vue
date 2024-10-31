@@ -1,3 +1,3 @@
 <template>
-    <h1>图书馆</h1>
+    <p>connect</p>
 </template>
