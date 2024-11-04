@@ -44,7 +44,7 @@ export default {
       day: Number
     },
     tags: Array,
-    link: String
+    link: Object // 路由对象
   }
 }
 </script>

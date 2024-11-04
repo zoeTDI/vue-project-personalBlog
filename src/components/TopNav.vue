@@ -1,8 +1,8 @@
 <!--
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-10-31 15:47:53
- * @LastEditors: Caldm 1832400547@qq.com
- * @LastEditTime: 2024-10-31 19:32:14
+ * @LastEditors: Caldm
+ * @LastEditTime: 2024-11-03 19:01:48
  * @FilePath: \期末作业\src\components\TopNav.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,9 +10,17 @@
   <div class="nav">
     <div class="nav-list">
       <ul>
-        <li v-for="(item, index) in navList" :key="index" :class="item.classList">
-          <router-link  :to="item.path">
-            <img v-if="index === isLogo" :src="logoImage" alt="logo" />
+        <li
+          v-for="(item, index) in navList"
+          :key="index"
+          :class="item.classList"
+        >
+          <router-link :to="item.path">
+            <img
+              v-if="index === isLogo"
+              :src="logoImage"
+              alt="logo"
+            />
             {{ item.name }}
           </router-link>
         </li>
@@ -46,6 +54,7 @@ export default {
 a {
   text-decoration: none;
 }
+
 .nav {
   position: absolute;
   width: 100%;
@@ -56,14 +65,17 @@ a {
   overflow: hidden;
   transition: height 0.5s ease;
 }
+
 .nav:hover {
   height: 64px;
 }
+
 .nav-list {
   width: 95%;
-  max-width: 88em;
+  max-width: 116em;
   margin: auto;
 }
+
 .nav-list ul {
   list-style-type: none;
   margin: auto 0;
@@ -71,19 +83,23 @@ a {
   display: flex;
   flex: 0 1 60px;
 }
+
 .nav-list li {
   display: flex;
   text-align: center;
 }
+
 .nav-list a {
   margin: auto;
   display: block;
   padding: 0.5em 0.8em;
 }
+
 .logo {
   flex-basis: 50px;
   margin: auto 1em;
 }
+
 .logo a {
   width: 50px;
   height: 50px;
@@ -93,14 +109,17 @@ a {
   border-radius: 50%;
   overflow: hidden;
 }
+
 .logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .title {
   flex-grow: 1;
 }
+
 .title a {
   margin-left: 1em;
   text-align: left;

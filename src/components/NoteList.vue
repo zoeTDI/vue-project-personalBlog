@@ -4,10 +4,10 @@
       v-for="(note, index) in notes"
       :key="index"
       :title="note.title"
-      :summary="note.summary"
+      :summary="note.content.slice(0, 100)"
       :date="note.date"
       :tags="note.tags"
-      :link="note.link"
+      :link="{ name: 'Note', params: { id: note.id } }"
     />
   </div>
 </template>
@@ -22,9 +22,6 @@ export default {
     return {
       notes: data
     }
-  },
-  methods: {
-
   }
 }
 </script>

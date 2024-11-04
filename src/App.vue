@@ -8,17 +8,17 @@
 -->
 <template>
   <div id="app">
-    <topNav />
+    <TopNav />
     <router-view />
   </div>
 </template>
 
 <script>
-import topNav from './components/TopNav'
+import TopNav from './components/TopNav'
 export default {
   name: 'App',
   components: {
-    topNav
+    TopNav
   }
 }
 </script>

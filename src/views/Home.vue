@@ -2,38 +2,44 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-10-31 12:31:51
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-03 16:57:36
+ * @LastEditTime: 2024-11-04 09:49:27
+ * @Description:
+-->
+<!--
+ * @Author: Caldm 1832400547@qq.com
+ * @Date: 2024-10-31 12:31:51
+ * @LastEditors: Caldm
+ * @LastEditTime: 2024-11-04 09:48:42
  * @FilePath: \期末作业\src\views\Home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
   <div id="home">
-    <banner />
+    <Banner />
     <div class="wrapper">
       <div id="sidebar">
-        <sidebar />
+        <SideBar />
       </div>
       <div id="main">
-        <noteList />
+        <NoteList />
       </div>
     </div>
   </div>
 </template>
 <script>
-import banner from '../components/Banner'
-import sidebar from '../components/Sidebar'
-import noteList from '../components/NoteList.vue'
+import Banner from '../components/Banner'
+import SideBar from '../components/SideBar'
+import NoteList from '../components/NoteList.vue'
 export default {
   components: {
-    banner,
-    sidebar,
-    noteList
+    Banner,
+    SideBar,
+    NoteList
   }
 }
 </script>
 <style scoped>
 #home {
-  min-height: 200vh;
   background-color: #fff;
 }
 
