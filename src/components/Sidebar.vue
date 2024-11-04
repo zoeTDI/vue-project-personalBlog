@@ -132,9 +132,11 @@
       <div class="card-content categories">
         <ul>
           <li
-            v-for="(category, index) in categories"
+            v-for="(category, index) in categories.filter((value, index, self) => self.indexOf(value) === index)"
             :key="index"
-          >{{ category }}</li>
+          ><router-link to="./categories">
+            {{ category }}
+          </router-link></li>
         </ul>
       </div>
     </div>
@@ -142,6 +144,7 @@
 </template>
 
 <script>
+import data from '../assets/data.json'
 export default {
   data () {
     return {
@@ -152,7 +155,7 @@ export default {
       announcement: '欢迎来访 Caldm 的个人博客，博主暂时还没有发布任何公告。',
       qqId: '1832400547',
       email: '1832400547@qq.com',
-      categories: ['类型一', '类型二', '类型三']
+      categories: data.map(e => e.category)
     }
   },
   methods: {
@@ -192,6 +195,13 @@ h6 {
   padding: 0;
   font-weight: normal;
   font-size: 1em;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  background-color: #F5F5F5;
 }
 
 .card {
