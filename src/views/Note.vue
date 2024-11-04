@@ -2,18 +2,25 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 18:08:45
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-04 09:52:04
+ * @LastEditTime: 2024-11-04 18:43:47
  * @Description:
 -->
 <!-- src/views/NoteDetail.vue -->
 <template>
   <div id="note">
     <div class="wrapper">
-      <div id="SideBar">
+      <div id="left-side-bar">
         <SideBar />
       </div>
       <div id="main">
-        <Note />
+        <Note
+          :title="note.title"
+          :content="note.content.split('\\n')"
+          :author="note.author"
+        />
+      </div>
+      <div id="right-side-bar">
+
       </div>
     </div>
   </div>
@@ -39,7 +46,7 @@ export default {
 </script>
 <style scoped>
 #note {
-  min-height: 200vh;
+  min-height: 100vh;
   background-color: #fff;
 }
 
@@ -49,6 +56,20 @@ export default {
   max-width: 116em;
   margin: auto;
   padding-top: 1.5em;
+}
+
+#left-side-bar {
+  flex: 0 0 20%;
+}
+
+#main {
+  flex: 1 1 60%;
+  max-width: 76em;
+  min-width: 34em;
+}
+
+#right-side-bar {
+  flex: 0 0 20%;
 }
 
 .content {

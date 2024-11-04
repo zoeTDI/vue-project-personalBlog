@@ -209,6 +209,7 @@ a:hover {
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid #eceef0;
   border-radius: 15px;
+  box-shadow: 0 0 5px #cbcbcb;
   overflow: hidden;
 }
 
@@ -260,6 +261,7 @@ a:hover {
   padding: 5px;
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid #eceef0;
+  box-shadow: 0 0 5px #cbcbcb;
   border-radius: 15px;
   text-align: center;
 }
