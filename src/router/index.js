@@ -2,7 +2,7 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-10-31 12:25:15
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-03 18:24:01
+ * @LastEditTime: 2024-11-04 20:55:35
  * @FilePath: \期末作业\src\router\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -42,7 +42,7 @@ export default new Router({
       component: () => import('../views/NotFound')
     },
     {
-      path: '/note/:id',
+      path: '/note/:id(\\d+)',
       name: 'Note',
       component: () => import('../views/Note')
     }

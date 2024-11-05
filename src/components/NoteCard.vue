@@ -2,18 +2,16 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 17:01:57
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-03 17:52:22
+ * @LastEditTime: 2024-11-05 08:47:23
  * @Description:
 -->
 <template>
   <div class="note-card">
     <div class="header">
       <div class="title">
-        <h1>
-          <router-link :to="link">
-            {{ title }}
-          </router-link>
-        </h1>
+        <router-link :to="link">
+          <h1>{{ title }}</h1>
+        </router-link>
       </div>
     </div>
     <div class="body">
@@ -64,16 +62,7 @@ export default {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
 }
 
-.header {
-  width: 100%;
-  min-height: 3em;
-  padding: 0 .5em;
-  padding-top: .25em;
-  padding-bottom: .5em;
-  background-color: #F5F5F5;
-}
-
-.header h1 a,
+.header a h1,
 .body .summary {
   /* 允许长单词或 URL 地址换行到下一行 */
   word-wrap: break-word;
@@ -85,9 +74,20 @@ export default {
   overflow-wrap: break-word;
 }
 
-.header h1 a {
+.header {
+  width: 100%;
+  min-height: 3em;
+  background-color: #F5F5F5;
+}
+
+.header .title {
+  display: inline-block;
+  margin: 0.5em 0 0 1em;
+}
+
+.header a h1 {
   margin-left: .725em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #253d27;
 }
 

@@ -2,7 +2,7 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 18:08:45
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-04 18:43:47
+ * @LastEditTime: 2024-11-05 10:26:54
  * @Description:
 -->
 <!-- src/views/NoteDetail.vue -->
@@ -64,6 +64,7 @@ export default {
 
 #main {
   flex: 1 1 60%;
+  margin: auto 1em;
   max-width: 76em;
   min-width: 34em;
 }

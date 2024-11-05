@@ -2,11 +2,11 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 18:44:43
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-04 19:06:31
+ * @LastEditTime: 2024-11-05 10:30:00
  * @Description:
 -->
 <template>
-  <div id="note">
+  <div class="note">
     <div class="header">
       <h1>{{ title }}</h1>
       <h2>{{ author }}</h2>
@@ -39,13 +39,14 @@ export default {
 }
 </script>
 <style scoped>
-/* #note {
+/* .note {
   outline: 1px solid #aaa;
 } */
 
-#note {
-  width: 100%;
-  margin: 1em .5em;
+.note {
+  width: 95%;
+  margin: .5em auto;
+  margin-top: 1em;
   padding: 2em 4.5em;
   padding-top: 3.5em;
   border: 1px solid #eceef0;
@@ -62,21 +63,23 @@ export default {
   background: #F5F5F5;
 }
 
-#note h1 {
+.note .header h1 {
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
 }
 
-#note h2 {
+.note .header h2 {
   text-align: center;
   font-size: 1.5em;
   font-style: italic;
   color: #aaa;
   margin: 0;
   padding: 0;
+  margin-top: .5em;
+  margin-bottom: 1em;
 }
 
-#note p {
+.note p {
   text-indent: 2em;
   line-height: 2em;
   padding: 0 .5em;

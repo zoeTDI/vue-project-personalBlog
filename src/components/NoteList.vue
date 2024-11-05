@@ -27,6 +27,6 @@ export default {
 </script>
 <style scoped>
 #notes {
-  margin: 1em 1em;
+  margin: 1em;
 }
 </style>
