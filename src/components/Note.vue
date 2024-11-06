@@ -2,7 +2,7 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 18:44:43
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-05 10:30:00
+ * @LastEditTime: 2024-11-05 10:32:47
  * @Description:
 -->
 <template>
@@ -45,7 +45,7 @@ export default {
 
 .note {
   width: 95%;
-  margin: .5em auto;
+  margin: 0.5em auto;
   margin-top: 1em;
   padding: 2em 4.5em;
   padding-top: 3.5em;
@@ -60,7 +60,7 @@ export default {
 
 .body *:hover {
   border-left: 5px solid rgba(57, 57, 255, 0.8);
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 
 .note .header h1 {
@@ -75,14 +75,15 @@ export default {
   color: #aaa;
   margin: 0;
   padding: 0;
-  margin-top: .5em;
+  margin-top: 0.5em;
   margin-bottom: 1em;
 }
 
 .note p {
   text-indent: 2em;
   line-height: 2em;
-  padding: 0 .5em;
+  padding: 0 0.5em;
+  margin: 0.5em 0;
 }
 
 .body img {

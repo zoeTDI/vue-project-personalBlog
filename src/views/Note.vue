@@ -2,7 +2,7 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 18:08:45
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-05 10:26:54
+ * @LastEditTime: 2024-11-05 12:28:01
  * @Description:
 -->
 <!-- src/views/NoteDetail.vue -->
@@ -18,9 +18,6 @@
           :content="note.content.split('\\n')"
           :author="note.author"
         />
-      </div>
-      <div id="right-side-bar">
-
       </div>
     </div>
   </div>

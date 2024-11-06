@@ -2,7 +2,7 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 17:01:57
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-05 08:47:23
+ * @LastEditTime: 2024-11-05 10:41:50
  * @Description:
 -->
 <template>
@@ -47,6 +47,10 @@ export default {
 }
 </script>
 <style scoped>
+.note-card:nth-child(1) {
+  margin-top: 0;
+}
+
 .note-card {
   width: 95%;
   margin: 2.5em auto;
@@ -55,7 +59,7 @@ export default {
   border-radius: 15px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  transition: box-shadow .5s;
+  transition: box-shadow .3s;
 }
 
 .note-card:hover {

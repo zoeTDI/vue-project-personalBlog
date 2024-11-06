@@ -1,11 +1,52 @@
 <!--
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-10-31 12:37:13
- * @LastEditors: Caldm 1832400547@qq.com
- * @LastEditTime: 2024-10-31 16:00:17
- * @FilePath: \期末作业\src\views\Categories.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditors: Caldm
+ * @LastEditTime: 2024-11-06 07:58:55
+ * @Description: 
 -->
 <template>
-    <h1>Categories</h1>
+  <div id="categories">
+    <div class="wrapper">
+      <div id="left-side-bar">
+        <SideBar />
+      </div>
+      <div id="main">
+        <NoteList :noteList="notes"/>
+      </div>
+    </div>
+  </div>
 </template>
+<script>
+import SideBar from '../components/SideBar'
+import NoteList from '../components/NoteList.vue'
+import data from '../assets/data.json'
+export default {
+  components: {
+    SideBar,
+    NoteList
+  },
+  data () {
+    return {
+      notes: data.filter(e => e.category === (this.$route.params.cate === 'all' ? e.category : this.$route.params.cate))
+    }
+  }
+}
+</script>
+<style scoped>
+.wrapper {
+  display: flex;
+  width: 95%;
+  max-width: 116em;
+  margin: auto;
+  padding-top: 1.5em;
+}
+
+#main {
+  flex: 1 1 60%;
+  margin: 1em;
+  margin-top: 0;
+  max-width: 76em;
+  min-width: 34em;
+}
+</style>

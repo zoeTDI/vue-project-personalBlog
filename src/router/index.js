@@ -2,7 +2,7 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-10-31 12:25:15
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-04 20:55:35
+ * @LastEditTime: 2024-11-05 11:48:42
  * @FilePath: \期末作业\src\router\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,7 +14,7 @@ Vue.use(Router)
 
 export default new Router({
   linkActiveClass: 'active',
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
@@ -22,7 +22,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/categories',
+      path: '/categories/:cate',
       name: 'Categories',
       component: () => import('../views/Categories')
     },
@@ -37,7 +37,7 @@ export default new Router({
       component: () => import('../views/Connect')
     },
     {
-      path: '*',
+      path: '/*',
       name: 'NotFound',
       component: () => import('../views/NotFound')
     },

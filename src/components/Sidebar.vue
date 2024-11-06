@@ -107,7 +107,7 @@
         <p>{{ announcement }}</p>
       </div>
     </div>
-    <div class="container card">
+    <div class="card categories">
       <div class="card-header">
         <div class="card-icon">
           <svg
@@ -129,14 +129,14 @@
           <span>分类</span>
         </div>
       </div>
-      <div class="card-content categories">
+      <div class="card-content">
         <ul>
           <li
-            v-for="(category, index) in categories.filter((value, index, self) => self.indexOf(value) === index)"
+            v-for="(item, index) in categories.filter((value, index, self) => self.indexOf(value) === index)"
             :key="index"
-          ><router-link to="./categories">
-            {{ category }}
-          </router-link></li>
+          ><router-link :to="{name: 'Categories', params: {cate: item}}">
+              {{ item }}
+            </router-link></li>
         </ul>
       </div>
     </div>
@@ -168,9 +168,6 @@ export default {
         alert(`复制到剪贴板失败，请手动复制 ${this.qqId}`)
       }
     },
-    openWeChat () {
-      // 打开微信链接的逻辑
-    },
     copyEmail () {
       try {
         navigator.clipboard.writeText(this.email)
@@ -196,12 +193,14 @@ h6 {
   font-weight: normal;
   font-size: 1em;
 }
+
 a {
   color: black;
   text-decoration: none;
 }
+
 a:hover {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .card {
@@ -211,20 +210,26 @@ a:hover {
   border-radius: 15px;
   box-shadow: 0 0 5px #cbcbcb;
   overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+#header:hover,
+.card:hover {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
 }
 
 .card-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .card-icon {
   height: 24px;
   width: 24px;
   flex: 0 0 auto;
-  margin: .6em .4em;
+  margin: 0.6em 0.4em;
   margin-left: 1em;
   padding: 0;
   overflow: hidden;
@@ -236,17 +241,20 @@ a:hover {
 
 .card-title {
   flex: 1 1 auto;
-  margin: 0 .5em;
+  margin: 0 0.5em;
   margin-left: 0;
   font-size: 1.2em;
 }
+
 .card-content {
-  padding: .5em;
-  margin-bottom: .5em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
 }
-.card-content p{
+
+.card-content p {
   text-indent: 2em;
 }
+
 #sidebar {
   width: 100%;
   max-width: 300px;
@@ -264,12 +272,13 @@ a:hover {
   box-shadow: 0 0 5px #cbcbcb;
   border-radius: 15px;
   text-align: center;
+  transition: box-shadow 0.3s;
 }
 
 #header-image {
   margin: auto;
   margin-top: 1.5em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   max-width: 100px;
   border: 5px solid #eaeaea;
   border-radius: 50%;
@@ -282,8 +291,8 @@ a:hover {
 }
 
 #info h1 {
-  margin: 1em 3em .5em;
-  padding-bottom: .5em;
+  margin: 1em 3em 0.5em;
+  padding-bottom: 0.5em;
   font-size: 1.3em;
   border-bottom: 1px solid black;
 }
@@ -291,7 +300,7 @@ a:hover {
 #info h2 {
   display: block;
   margin: auto 1.8em 1.2em;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: normal;
   line-height: 1.5em;
 }
@@ -332,7 +341,7 @@ a:hover {
   opacity: 1;
   margin-top: 8px;
   padding: 8px;
-  border: 1px solid #F5F5F5;
+  border: 1px solid #f5f5f5;
   border-radius: 8px;
   background-color: #eaeaea;
 }
@@ -343,18 +352,20 @@ a:hover {
 }
 
 .connect button:hover {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .connect .icon {
   width: 80%;
   padding: 0.4em 1em;
 }
+
 .categories ul {
   list-style-type: none;
 }
+
 .categories li {
-  margin: .8em 0;
-  margin-left: .8em;
+  margin: 0.8em 0;
+  margin-left: 0.8em;
 }
 </style>

@@ -2,7 +2,7 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-10-31 12:31:51
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-04 09:49:27
+ * @LastEditTime: 2024-11-05 12:43:20
  * @Description:
 -->
 <!--
@@ -21,7 +21,7 @@
         <SideBar />
       </div>
       <div id="main">
-        <NoteList />
+        <NoteList :noteList="notes" />
       </div>
     </div>
   </div>
@@ -29,12 +29,18 @@
 <script>
 import Banner from '../components/Banner'
 import SideBar from '../components/SideBar'
-import NoteList from '../components/NoteList.vue'
+import NoteList from '../components/NoteList'
+import data from '../assets/data.json'
 export default {
   components: {
-    Banner,
     SideBar,
+    Banner,
     NoteList
+  },
+  data () {
+    return {
+      notes: data
+    }
   }
 }
 </script>
@@ -57,5 +63,7 @@ export default {
 
 #main {
   flex: 1 auto;
+  margin: 1em;
+  margin-top: 0;
 }
 </style>
