@@ -2,7 +2,7 @@
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 17:01:57
  * @LastEditors: Caldm
- * @LastEditTime: 2024-11-05 10:41:50
+ * @LastEditTime: 2024-11-07 16:23:54
  * @Description:
 -->
 <template>
@@ -23,7 +23,11 @@
     </div>
     <div class="foot">
       <div id="date">
-        <p>{{ date.year }} - {{ date.month }} - {{ date.day }}</p>
+        <p>{{ date.slice(0, 4) }} - {{ date.slice(4, 6) }}
+          -
+          {{ date.slice(6, 8) }}
+          {{date.slice(8, 10)}}:{{ date.slice(10,12) }}
+        </p>
       </div>
       <div id="tags">
         <p>{{ tags.join(' ') }}</p>
@@ -36,11 +40,7 @@ export default {
   props: {
     title: String,
     summary: String,
-    date: {
-      year: Number,
-      month: Number,
-      day: Number
-    },
+    date: String,
     tags: Array,
     link: Object // 路由对象
   }
@@ -59,7 +59,7 @@ export default {
   border-radius: 15px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  transition: box-shadow .3s;
+  transition: box-shadow 0.3s;
 }
 
 .note-card:hover {
@@ -81,7 +81,7 @@ export default {
 .header {
   width: 100%;
   min-height: 3em;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .header .title {
@@ -90,7 +90,7 @@ export default {
 }
 
 .header a h1 {
-  margin-left: .725em;
+  margin-left: 0.725em;
   font-size: 1.2em;
   color: #253d27;
 }
@@ -107,7 +107,7 @@ export default {
 
 .foot {
   display: flex;
-  margin: .5em 1em;
+  margin: 0.5em 1em;
 }
 
 .foot #date {

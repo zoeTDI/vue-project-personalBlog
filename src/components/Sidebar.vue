@@ -2,13 +2,15 @@
   <div id="sidebar">
     <div id="header">
       <div id="header-image">
-        <img
-          :src="avatarSrc"
-          alt="头像"
-        >
+        <router-link to="/">
+          <img
+            :src="avatarSrc"
+            alt="头像"
+          >
+        </router-link>
       </div>
       <div id="info">
-        <h1>{{ userName }}</h1>
+        <h1><router-link to="/">{{ userName }}</router-link></h1>
         <h2>{{ summary }}</h2>
         <div class="connect">
           <button
@@ -126,7 +128,8 @@
           </svg>
         </div>
         <div class="card-title">
-          <span>分类</span>
+          <span><router-link
+              :to="{name: 'Categories', params: {cate: 'all'}}">分类</router-link></span>
         </div>
       </div>
       <div class="card-content">
@@ -134,9 +137,13 @@
           <li
             v-for="(item, index) in categories.filter((value, index, self) => self.indexOf(value) === index)"
             :key="index"
-          ><router-link :to="{name: 'Categories', params: {cate: item}}">
+          >
+            <router-link
+              :to="{name: 'Categories', params: {cate: item}}"
+            >
               {{ item }}
-            </router-link></li>
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
