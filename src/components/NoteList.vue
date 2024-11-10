@@ -10,8 +10,9 @@
     <NoteCard
       v-for="(note, index) in noteList"
       :key="index"
+      :pic="note.pic"
       :title="note.title"
-      :summary="note.content.slice(0, 98) + '……'"
+      :summary="note.content.split('\\n')[0].slice(0, 98) + '……'"
       :date="note.date"
       :tags="note.tags"
       :link="{ name: 'Note', params: { id: note.id } }"

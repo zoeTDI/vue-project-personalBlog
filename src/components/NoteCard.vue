@@ -1,36 +1,42 @@
 <!--
  * @Author: Caldm 1832400547@qq.com
  * @Date: 2024-11-03 17:01:57
- * @LastEditors: Caldm
- * @LastEditTime: 2024-11-07 16:23:54
+ * @LastEditors: zoeTDI
+ * @LastEditTime: 2024-11-10 10:44:02
  * @Description:
 -->
 <template>
   <div class="note-card">
     <div class="header">
-      <div class="title">
-        <router-link :to="link">
-          <h1>{{ title }}</h1>
-        </router-link>
-      </div>
+      <h1><router-link :to="link">{{ title }}</router-link></h1>
     </div>
-    <div class="body">
-      <div class="summary">
-        <router-link :to="link">
-          {{ summary }}
-        </router-link>
+    <div class="content">
+      <div class="image-container">
+        <img
+          :src="require('@/assets/notesAssets/' + pic)"
+          alt="cover"
+        >
       </div>
-    </div>
-    <div class="foot">
-      <div id="date">
-        <p>{{ date.slice(0, 4) }} - {{ date.slice(4, 6) }}
-          -
-          {{ date.slice(6, 8) }}
-          {{date.slice(8, 10)}}:{{ date.slice(10,12) }}
-        </p>
-      </div>
-      <div id="tags">
-        <p>{{ tags.join(' ') }}</p>
+      <div class="text-container">
+        <p>{{ summary }}</p>
+        <div class="footer">
+          <p class="date">
+            {{ date.slice(0, 4) }} - {{ date.slice(4, 6) }}
+            -
+            {{ date.slice(6, 8) }}
+            {{date.slice(8, 10)}}:{{ date.slice(10,12) }}
+          </p>
+          <div class="tags">
+            <p
+              v-for="(tag, index) in tags"
+              :key="index"
+              class="tag"
+            >
+              {{tag}}
+            </p>
+            <p class="tag">明日方舟</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -38,89 +44,86 @@
 <script>
 export default {
   props: {
+    pic: String,
     title: String,
     summary: String,
     date: String,
     tags: Array,
-    link: Object // 路由对象
+    link: Object
   }
 }
 </script>
-<style scoped>
-.note-card:nth-child(1) {
-  margin-top: 0;
-}
 
+<style scoped>
 .note-card {
-  width: 95%;
-  margin: 2.5em auto;
-  background: rgba(255, 255, 255, 0.94);
   border: 1px solid #eceef0;
   border-radius: 15px;
+  margin: 1em 0;
+  padding: 1em;
+  width: 100%;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-  overflow: hidden;
   transition: box-shadow 0.3s;
 }
-
 .note-card:hover {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
 }
-
-.header a h1,
-.body .summary {
-  /* 允许长单词或 URL 地址换行到下一行 */
-  word-wrap: break-word;
-  /* 强制文本在任何字符处换行 */
-  word-break: break-all;
-  /* 允许文本在必要时换行 */
-  white-space: normal;
-  /* 处理长单词和 URL */
-  overflow-wrap: break-word;
-}
-
 .header {
-  width: 100%;
-  min-height: 3em;
-  background-color: #f5f5f5;
+  margin-bottom: 1em;
 }
-
-.header .title {
-  display: inline-block;
-  margin: 0.5em 0 0 1em;
-}
-
-.header a h1 {
-  margin-left: 0.725em;
+.header h1 {
   font-size: 1.2em;
-  color: #253d27;
 }
-
-.summary {
-  padding: 0.8em 1.8em 0.8em;
-  text-indent: 2em;
+.header a {
+  color: #2C3E50;
 }
-
-.summary a {
-  font-size: 1.2em;
-  color: black;
-}
-
-.foot {
+.content {
   display: flex;
-  margin: 0.5em 1em;
 }
-
-.foot #date {
-  flex: 0 0 auto;
+.image-container {
+  flex: 1;
   margin-right: 1em;
 }
-
-.foot #tags {
-  flex: 1 1 auto;
+.image-container img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #eceef0;
+  border-radius: 4.5px;
+}
+.text-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.text-container p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+.footer {
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  gap: 1em;
 }
 
-.foot #tags p {
-  font-style: italic;
-  text-decoration: underline;
+.date {
+  flex: 1 0 auto;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag {
+  margin: 4px;
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #666;
 }
 </style>
