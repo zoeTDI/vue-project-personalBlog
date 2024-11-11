@@ -52,12 +52,12 @@ module.exports = {
 
   build: {
     // index.html 的模板
-    // index: path.resolve(__dirname, '../dist/index.html'),
-    index: path.resolve('D:/Documents/01-study/CodeVault/JavaWeb/out/artifacts/JavaWeb_war_exploded/dist/index.html'),
+    index: path.resolve(__dirname, '../dist/index.html'),
+    // index: path.resolve('D:/Documents/01-study/CodeVault/JavaWeb/out/artifacts/JavaWeb_war_exploded/dist/index.html'),
 
     // 路径
-    // assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsRoot: path.resolve('D:/Documents/01-study/CodeVault/JavaWeb/out/artifacts/JavaWeb_war_exploded/dist'),
+    assetsRoot: path.resolve(__dirname, '../dist'),
+    // assetsRoot: path.resolve('D:/Documents/01-study/CodeVault/JavaWeb/out/artifacts/JavaWeb_war_exploded/dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
 
